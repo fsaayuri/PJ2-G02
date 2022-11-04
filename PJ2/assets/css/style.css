@@ -1,0 +1,125 @@
+* {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-color: rgb(255, 250, 251);
+}
+
+body {
+    margin: 0px 40px 0px 40px; /* cima | direita | baixo | esquerda*/
+}
+
+#logo {
+    width: 50px;
+}
+
+.mini-icon-perfil  {
+    width: 32px;
+    border-radius: 17px;
+}
+
+header{
+    margin-bottom: 50px;
+}
+
+header .container-main-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container-main-head #login {
+    margin-left: 60%;
+    margin-right: 2%;
+}
+
+header #pesquisa {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+header #pesquisa .sugestao-cat {
+    margin-left: 2%;
+}
+
+.ag {
+    margin-top: 20px;
+}
+
+.ag .container {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.ag .container .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row img {
+    width: 23.7%;
+    margin: 20px 0px 4px 0px; /* cima | direita | baixo | esquerda*/
+    border-radius: 8px;
+}
+
+/*profile card*/
+
+.recomendacao span{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.recomendacao{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(233, 233, 233);
+    padding: 12px;
+    border-radius: 50px;
+}
+
+.recomendacao .perfilCard{
+    height:210px;
+    width:120px;
+    position:relative;
+    overflow:hidden;
+    font-family: 'Poppins', sans-serif;
+    cursor:pointer;
+    border-radius: 10px;
+}
+
+.d-none {
+    display: none;
+}
+
+.bgCard img{
+    object-fit: contain;
+    width:100%;
+}
+
+.recomendacao .perfilCard .image {
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: 3px solid #fff;
+    position: relative;
+    bottom: 13%;
+    left: 30%;
+}
+.recomendacao .perfilCard .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover
+}
+.recomendacao .perfilCard .text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.text p{
+    font-size:12px;
+    color: grey;
+}
