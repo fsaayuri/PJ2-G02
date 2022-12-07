@@ -1,0 +1,444 @@
+:root {
+    --primary: #6f4cc2;
+    --primary-dark:#573a9c; 
+    --secundary: #4bc284;
+    --secundary-dark: #40a771;
+    --night-ver: #303030;
+    --dark-1000: #000;
+    --dark-800: #0c0c0c;
+    --dark-600: #141414;
+    --dark-400: #818181;
+    --dark-200: #ebebeb;
+    --dark-0: #FFF;
+}
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.d-none {
+    display: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.wrapper {
+    margin-top: 15px ;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* navegação */
+
+#logo {
+    width: 70px;
+    margin: 0px 10px 0px 0px;
+}
+
+.mini-icon-perfil  {
+    width: 32px;
+    border-radius: 17px;
+}
+
+nav .container-main-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px 0px 40px;
+    /* margin: 0px 0px 15px 0px; */
+    box-shadow: rgb(0 0 0 / 4%) 0px 0px 26px -3px, rgb(0 0 0 / 2%) 0px 3px 6px -2px
+}
+
+nav .container-main-head ul {
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+}
+
+nav .container-main-head li {
+    padding: 0px 10px 0px 10px;
+}
+
+nav .container-main-head a{
+    color: var(--dark-400);
+    text-decoration: none;
+}
+
+nav .container-main-head .group-main-head li a:hover{
+    border-bottom: 2px solid var(--dark-800);
+    padding: 10px 0px 10px 0px;
+    color: var(--dark-1000);
+}
+
+nav .container-main-head .group-main-head li a:hover{
+    color: var(--dark-1000);
+}
+
+nav .container-main-head .group-head li .cadastrar-btn:hover{
+    color: var(--dark-1000);
+}
+
+nav .container-main-head input[type=text] {
+    float: right;
+    /* padding: 6px; */
+    border-radius: 50px;
+    font-size: 14px;
+    border: 1px solid var(--dark-200);
+    width: 450px;
+    /* background-color: white;
+    background-image: url('search-icon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat; */
+    padding: 6px 20px 6px 20px;
+    transition: 0.1s;
+    outline: none;
+}
+
+nav .container-main-head input[type=text]:focus {
+    border: 1px solid var(--dark-400);
+}
+
+nav .container-main-head .group-main-head {
+    display: flex;
+    align-items: center;
+}
+
+nav .container-main-head .btn {
+    background-color: var(--primary);
+    color: var(--dark-0);
+    padding: 5px 16px 5px 16px;
+    border-radius: 50px;
+    font-weight: 400;
+    transition-duration: 0.1s;
+}
+
+nav .container-main-head .btn:hover {
+    background-color: var(--primary-dark);
+    color: var(--dark-0);
+}
+
+nav .container-main-head .group-head{
+    display: flex;
+    align-items: center;
+}
+
+/* imagem de destaque */
+.carousel {
+    margin: 40px;
+}
+.carousel-item.active, .carousel-item-next, .carousel-item-prev {
+    display: block;
+    height: 250px;
+}
+
+.wrapper .carousel .carousel-inner .carousel-item img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    height: 250px;
+    /* margin: 10px 40px 10px 40px; */
+}
+.wrapper .carousel .carousel-inner .carousel-item p{
+    margin: -50px 0px 0px 24px;
+    color: var(--dark-0);
+    font-weight: 200;
+}
+
+/* feed de artes gerais */
+
+.ag{
+    display: block;
+    margin: 20px 40px 20px 40px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.row img {
+    width: 24%;
+    border-radius: 8px;
+    margin: 5px 0px 10px 0px;
+}
+
+/*profile card*/
+.recomendacao{
+    background: #6f4cc218;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    margin: 10px 0px 10px 0px;
+}
+
+.recomendacao .txt-recomendacoes{
+    margin: 0px auto 17px 66px;
+}
+
+.recomendacao .perfis{
+    display: flex;
+    margin: 0px 66px auto 66px;
+    justify-content: space-between;
+}
+
+.recomendacao .perfilCard{
+    height: 230px;
+    width: 160px;
+    position:relative;
+    overflow:hidden;
+    background: var(--dark-0);
+    border-radius: 10px;
+}
+
+.recomendacao .perfilCard .bgCard img{
+    object-fit: contain;
+    width:100%;
+}
+
+.recomendacao .perfilCard .lower-card{
+    display: flex;
+    flex-direction:column;
+    margin-top: -25px;
+}
+
+.recomendacao .perfilCard .pfCard {
+    height: 50px;
+    width: 50px;
+    /* display: flex; */
+    border-radius: 50%;
+    border: 3px solid var(--dark-0);
+    position: relative;
+    /* bottom: 13%; */
+    left: 30%;
+}
+
+.recomendacao .perfilCard .pfCard img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.recomendacao .perfilCard .lower-card .pfCard .mini-icon-perfil{
+    display: flex;
+}
+
+
+.recomendacao .perfilCard .text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.recomendacao .perfilCard .text b{
+    margin-top: 2px;
+}
+
+.recomendacao .perfilCard .text p{
+    font-size:12px;
+    color: var(--dark-400);
+    margin-bottom: 2px;
+}
+
+.recomendacao .perfis .perfilCard .btn{
+    background-color: var(--primary);
+    color: var(--dark-0);
+    padding: 4px 31px 4px 31px;
+    border-radius: 20px;
+    font-weight: 400;
+    margin-top: 9px;
+    transition-duration: 300ms;
+    font-size: 14px;
+
+}
+
+.recomendacao .perfis .perfilCard .btn:hover{
+    background-color: var(--primary-dark);
+    color: var(--dark-0);
+}
+
+/* modal */
+.modal{
+    background: #0c0c0c85;
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modal-body{
+    width: 600px;
+    border-radius: 15px;
+    background: var(--grey-1000);
+    color: var(--grey-0);
+    padding: 30px 20px;
+}
+
+.modal .modal-body form{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal .modal-body form label{
+    margin: 15px 0 0 0;
+}
+
+.modal .modal-body form input[type=text]{
+    height: 30px;
+    padding: 3px 5px;
+    margin: 8px 0;
+    border-radius: 10px;
+}
+
+/* .modal .modal-body form input[type=text]:focus {
+    background-color: lightblue;
+} */
+
+.modal .modal-body form button{
+    margin: 15px 0 0 0;
+}
+
+/* footer */
+body > footer{
+    background: var(--primary);
+    color: var(--dark-0);
+    text-align: center;
+    padding: 44px 50px;
+    margin: 0 auto;
+}
+
+
+
+/* perfil */
+.root{
+    display: flex;
+}
+
+.upper-body{
+    height: 300px;
+}
+.upper-body .bg-img{
+    height: 300px;
+}
+.upper-body .bg-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.upper-body .button .btn {
+    background-color: var(--primary);
+    color: var(--dark-0);
+    padding: 5px 16px 5px 16px;
+    border-radius: 50px;
+    font-weight: 400;
+    transition-duration: 300ms;
+
+    position: relative;
+    margin: -9% 0% 0% 87%;
+}
+
+.upper-body .button .btn:hover {
+    background-color: var(--primary-dark);
+    color: var(--dark-0);
+}
+
+.modalPerfil{
+    width: 282px;
+    height: 318px;
+    background: var(--dark-0);
+    box-shadow: rgba(149, 157, 165, 0.096) 0px 8px 24px;
+    margin-top: -50px;
+    position: sticky;
+    top: 120px;
+    left: 40px;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 20px;
+}
+
+.modalPerfil .modalContent{
+    width: 282px;
+    position: relative;
+    top: -70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalPerfil .modalContent .modalProfilePic{
+    width: 135px;
+    height: auto;
+}
+
+.modalPerfil .modalContent .modalProfilePic img{
+    height: 135px;
+    width: auto;
+    border-radius: 70px;
+    border: 5px solid var(--dark-0);
+}
+
+.modalPerfil .modalContent .modalBody{
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalPerfil .modalContent .modalBody p{
+    margin: 0px;    
+}
+
+.modalPerfil .modalContent .modalBody .username{
+    color: var(--dark-400);
+    font-size: 14px;
+}
+
+.modalPerfil .modalContent .modalBody .seguidores{
+    margin-top: 17px;
+}
+
+.modalPerfil .modalContent .modalBody .seguidores a{
+    color: var(--primary);
+    text-decoration: none;
+    transition: 0.1s;
+}
+
+.modalPerfil .modalContent .modalBody .seguidores .seg1{
+    margin-right: 10px;
+}
+
+.modalPerfil .modalContent .modalBody .seguidores a:hover {
+    color: var(--dark-600);
+}
+
+
+.modalPerfil .modalContent .modalFooter .nova-pub .btn{
+    background-color: var(--primary);
+    color: var(--dark-0);
+    padding: 5px 36px 5px 36px;
+    border-radius: 50px;
+    font-weight: 400;
+    transition-duration: 300ms;
+
+    margin-top: 37px;
+}
+
+.container{
+    margin-left: 20px;
+}
+
+.container .row img {
+    width: 32%;
+}

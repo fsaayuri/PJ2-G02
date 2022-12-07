@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <title>SyInk</title>
+</head>
+<body onload="loadAllProductions()">
+    <nav class="navbar">
+        <div class="container-main-head">
+            <div class="group-main-head">
+                <a href="/SyInk Projeto Final/">
+                    <img src="./assets/img/tipo-trans-roxo.png" id="logo">
+                </a>
+            </div>
+
+            <div class="group-head">
+                <ul>
+                    <li>
+                        <a href="#top" class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="#digital">Arte Digital</a>
+                    </li>
+                    <li>
+                        <a href="#traditional">Arte Tradicional</a>
+                    </li>
+                    <li>
+                        <a href="#graphic">Design Gráfico</a>
+                    </li>
+                    <li>
+                        <a href="#modeling">Modelagem 3D</a>
+                    </li>
+                </ul> 
+            </div>
+        </div>
+    </nav>
+
+    <main class="maine">
+        <section class="container" id="digital" >
+            <header class="content-section1 container flex-sb"> <!--header do botão-->
+
+                <h3 class="section-title">Arte Digital</h3>
+
+                <!-- <div class="breadcrumb"></div> -->
+                <button onclick="showModalDigital('#modal-cadastrar-digital')" class="btn">Adicionar Arte Digital</button>
+            </header>
+            <article id="catalogo-digital">
+                <!-- img ex: https://i.pinimg.com/564x/21/7c/1d/217c1d30cb140546685307d0330d1980.jpg -->
+                <div class="card-art-digital"></div>
+                <div class="card-art-digital"></div>
+                <div class="card-art-digital"></div>
+                <div class="card-art-digital"></div>
+                <div class="card-art-digital"></div>
+                <div class="card-art-digital"></div>
+                <div class="card-art-digital"></div>
+                <div class="card-art-digital"></div>
+            </article>
+        </section>
+    
+        <section class="container" id="traditional">
+            <header class="content-section2 container flex-sb"> <!--header do botão-->
+
+                <h3 class="section-title">Arte Tradicional</h3>
+
+                <!-- <div class="breadcrumb"></div> -->
+                <button onclick="showModalTraditional('#modal-cadastrar-traditional')" class="btn">Adicionar Arte Tradicional</button>
+            </header>
+            <article id="catalogo-traditional">
+                <!-- img ex: https://i.pinimg.com/564x/06/31/44/063144b39142e64d535538c13a4f9107.jpg -->
+                <div class="card-art-traditional"></div>
+                <div class="card-art-traditional"></div>
+                <div class="card-art-traditional"></div>
+                <div class="card-art-traditional"></div>
+                <div class="card-art-traditional"></div>
+                <div class="card-art-traditional"></div>
+                <div class="card-art-traditional"></div>
+                <div class="card-art-traditional"></div>
+            </article>
+        </section>
+
+        <section class="container" id="graphic">
+            <header class="content-section3 container flex-sb"> <!--header do botão-->
+
+                <h3 class="section-title">Design Gráfico</h3>
+
+                <!-- <div class="breadcrumb"></div> -->
+                <button onclick="showModalGraphic('#modal-cadastrar-graphic')" class="btn">Adicionar Design Gráfico</button>
+            </header>
+            <article id="catalogo-graphic">
+                <!-- img ex: https://i.pinimg.com/564x/ab/4d/0d/ab4d0d2782e1aeb78f5843afedbb49a6.jpg-->
+                <div class="card-art-graphic"></div>
+                <div class="card-art-graphic"></div>
+                <div class="card-art-graphic"></div>
+                <div class="card-art-graphic"></div>
+                <div class="card-art-graphic"></div>
+                <div class="card-art-graphic"></div>
+                <div class="card-art-graphic"></div>
+                <div class="card-art-graphic"></div>
+            </article>
+        </section>
+
+        <section class="container" id="modeling">
+            <header class="content-section4 container flex-sb"> <!--header do botão-->
+
+                <h3 class="section-title">Modelagem 3d</h3>
+
+                <!-- <div class="breadcrumb"></div> -->
+                <button onclick="showModalModeling('#modal-cadastrar-modeling')" class="btn">Adicionar Modelagem 3d</button>
+            </header>
+            <article id="catalogo-modeling">
+                <!-- img ex: https://i.pinimg.com/564x/5c/f0/1e/5cf01e53ce8186fdd3d438da5456fa6d.jpg -->
+                <div class="card-art-modeling"></div>
+                <div class="card-art-modeling"></div>
+                <div class="card-art-modeling"></div>
+                <div class="card-art-modeling"></div>
+                <div class="card-art-modeling"></div>
+                <div class="card-art-modeling"></div>
+                <div class="card-art-modeling"></div>
+                <div class="card-art-modeling"></div>
+            </article>
+        </section>
+
+
+        <!-- Modais Digital -->
+        <div class="modal" id="modal-cadastrar-digital" onclick="hideModal('#modal-cadastrar-digital', event)">
+            <div class="modal-body">
+                <h3>Cadastrar Arte Digital</h3>
+                <form onsubmit="insertDigital(event)">
+                    <label>Título do Projeto:</label>
+                    <input type="text" name="titleDigital" placeholder="Digite um título para sua arte"/>
+                    <label>Tag:</label>
+                    <input type="text" name="tagDigital" placeholder="Ex. #natal #hohoho"/>
+                    <label>Ferramentas:</label>
+                    <input type="text" name="toolsDigital" placeholder="Ex. Photoshop, Paint Tool Sai"/>
+                    <label>Categoria:</label>
+                    <input type="text" name="categoryDigital" placeholder="Ex. Arte Digital"/>
+                    <label>Capa:</label>
+                    <input type="text" name="coverDigital" placeholder="Cole o link da imagem aqui"/>
+                    <div class="botao">
+                        <button type="submit" class="btn">Cadastrar</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        <div class="modal" id="modal-editar-digital" onclick="hideModal('#modal-editar-digital', event)">
+            <div class="modal-body">
+                <h3>Editar Arte Digital</h3>
+                <form onsubmit="editDigital(event)">
+                    <label>Título do Projeto:</label>
+                    <input type="text" name="titleDigital" />
+                    <label>Tag:</label>
+                    <input type="text" name="tagDigital" />
+                    <label>Ferramentas:</label>
+                    <input type="text" name="toolsDigital" />
+                    <label>Categoria:</label>
+                    <input type="text" name="categoryDigital" />
+                    <label>Capa:</label>
+                    <input type="text" name="coverDigital" />
+                    
+                    <input type="hidden" name="id">
+    
+                    <div class="botao">
+                        <button type="submit" class="btn">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modais Tradicional --> 
+        <!-- Colocar o PlaceHolder -->
+        <div class="modal" id="modal-cadastrar-traditional" onclick="hideModal('#modal-cadastrar-traditional', event)">
+            <div class="modal-body">
+                <h3>Cadastrar Arte Tradicional</h3>
+                <form onsubmit="insertTraditional(event)">
+                    <label>Título do Projeto:</label>
+                    <input type="text" name="titleTraditional" placeholder="Digite um título para sua arte"/>
+                    <label>Tag:</label>
+                    <input type="text" name="tagTraditional" placeholder="Ex. #natal #hohoho"/>
+                    <label>Ferramentas:</label>
+                    <input type="text" name="toolsTraditional" placeholder="Ex. Photoshop, Paint Tool Sai"/>
+                    <label>Categoria:</label>
+                    <input type="text" name="categoryTraditional" placeholder="Ex. Arte Tradicional"/>
+                    <label>Capa:</label>
+                    <input type="text" name="coverTraditional" placeholder="Cole o link da imagem aqui"/>
+                    <div class="botao">
+                        <button type="submit" class="btn">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal" id="modal-editar-traditional" onclick="hideModal('#modal-editar-traditional', event)">
+            <div class="modal-body">
+                <h3>Editar Arte Tradicional</h3>
+                <form onsubmit="editTraditional(event)">
+                    <label>Título do Projeto:</label>
+                    <input type="text" name="titleTraditional" />
+                    <label>Tag:</label>
+                    <input type="text" name="tagTraditional" />
+                    <label>Ferramentas:</label>
+                    <input type="text" name="toolsTraditional" />
+                    <label>Categoria:</label>
+                    <input type="text" name="categoryTraditional" />
+                    <label>Capa:</label>
+                    <input type="text" name="coverTraditional" />
+                    
+                    <input type="hidden" name="id">
+    
+                    <div class="botao">
+                        <button type="submit" class="btn">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modais Graphic --> 
+        <!-- Colocar o PlaceHolder -->
+        <div class="modal" id="modal-cadastrar-graphic" onclick="hideModal('#modal-cadastrar-graphic', event)">
+            <div class="modal-body">
+                <h3>Cadastrar Design Gráfico</h3>
+                <form onsubmit="insertGraphic(event)">
+                    <label>Título do Projeto:</label>
+                    <input type="text" name="titleGraphic" placeholder="Digite um título para sua arte"/>
+                    <label>Tag:</label>
+                    <input type="text" name="tagGraphic" placeholder="Ex. #natal #hohoho"/>
+                    <label>Ferramentas:</label>
+                    <input type="text" name="toolsGraphic" placeholder="Ex. Photoshop, Paint Tool Sai"/>
+                    <label>Categoria:</label>
+                    <input type="text" name="categoryGraphic" placeholder="Ex. Design Gráfico"/>
+                    <label>Capa:</label>
+                    <input type="text" name="coverGraphic" placeholder="Cole o link da imagem aqui"/>
+                    <div class="botao">
+                        <button type="submit" class="btn">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal" id="modal-editar-graphic" onclick="hideModal('#modal-editar-graphic', event)">
+            <div class="modal-body">
+                <h3>Editar Design Gráfico</h3>
+                <form onsubmit="editGraphic(event)">
+                    <label>Título do Projeto:</label>
+                    <input type="text" name="titleGraphic" />
+                    <label>Tag:</label>
+                    <input type="text" name="tagGraphic" />
+                    <label>Ferramentas:</label>
+                    <input type="text" name="toolsGraphic" />
+                    <label>Categoria:</label>
+                    <input type="text" name="categoryGraphic" />
+                    <label>Capa:</label>
+                    <input type="text" name="coverGraphic" />
+                    
+                    <input type="hidden" name="id">
+    
+                    <div class="botao">
+                        <button type="submit" class="btn">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modais Modeling --> 
+        <!-- Colocar o PlaceHolder -->
+        <div class="modal" id="modal-cadastrar-modeling" onclick="hideModal('#modal-cadastrar-modeling', event)">
+            <div class="modal-body">
+                <h3>Cadastrar Modelagem 3d</h3>
+                <form onsubmit="insertModeling(event)">
+                    <label>Título do Projeto:</label>
+                    <input type="text" name="titleModeling" placeholder="Digite um título para sua arte"/>
+                    <label>Tag:</label>
+                    <input type="text" name="tagModeling" placeholder="Ex. #natal #hohoho"/>
+                    <label>Ferramentas:</label>
+                    <input type="text" name="toolsModeling" placeholder="Ex. Photoshop, Paint Tool Sai"/>
+                    <label>Categoria:</label>
+                    <input type="text" name="categoryModeling" placeholder="Ex. Arte Modelagem 3D"/>
+                    <label>Capa:</label>
+                    <input type="text" name="coverModeling" placeholder="Cole o link da imagem aqui"/>
+                    <div class="botao">
+                        <button type="submit" class="btn">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal" id="modal-editar-modeling" onclick="hideModal('#modal-editar-modeling', event)">
+            <div class="modal-body">
+                <h3>Editar Modelagem 3d</h3>
+                <form onsubmit="editModeling(event)">
+                    <label>Título do Projeto:</label>
+                    <input type="text" name="titleModeling" />
+                    <label>Tag:</label>
+                    <input type="text" name="tagModeling" />
+                    <label>Ferramentas:</label>
+                    <input type="text" name="toolsModeling" />
+                    <label>Categoria:</label>
+                    <input type="text" name="categoryModeling" />
+                    <label>Capa:</label>
+                    <input type="text" name="coverModeling" />
+                    
+                    <input type="hidden" name="id">
+                    <div class="botao">
+                        <button type="submit" class="btn">Editar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>© Copyright 2022 SyInk! | Todos os direitos Reservados</p>
+        <p>Fernanda Sayuri CG3021548  & Yasmim Ramos CG3020436</p>
+    </footer>
+    <script src="assets/js/main.js"></script> 
+</body>
+</html>
